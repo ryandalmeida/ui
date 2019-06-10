@@ -5,9 +5,7 @@ USER root
 RUN \
   apt-get update && \
   apt-get install -y python openssh-client iputils-ping vim && \
-  apt-add-repository ppa:ansible/ansible && \
   apt-get update && \
   apt-get install -y ansible
  
-RUN mkdir /ansible
-WORKDIR /ansible
+WORKDIR /root
