@@ -2,7 +2,6 @@ FROM ubuntu:16.04
  
 RUN apt-get update && \
 RUN apt-get install -y python && \
-RUN apt-get update && \
 RUN apt-add-repository -y ppa:ansible/ansible && \
 RUN apt-get update && \
 RUN apt-get install -y ansible
