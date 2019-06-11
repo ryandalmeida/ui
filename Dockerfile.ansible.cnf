@@ -1,12 +1,11 @@
 FROM ubuntu
  
-RUN \
-  apt-get update && \
-  apt-get install -y python && \
-  apt-get update && \
-  apt-add-repository -y ppa:ansible/ansible && \
-  apt-get update && \
-  apt-get install -y ansible && \
+RUN apt-get update && \
+RUN apt-get install -y python && \
+RUN apt-get update && \
+RUN apt-add-repository -y ppa:ansible/ansible && \
+RUN apt-get update && \
+RUN apt-get install -y ansible
 
 RUN mkdir /ansible
 WORKDIR /ansible
