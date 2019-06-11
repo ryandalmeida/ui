@@ -1,12 +1,12 @@
-FROM ubuntu
- 
-USER root
+FROM ubuntu:16.04
  
 RUN apt-get update && \
 RUN apt-get install -y python openssh-client iputils-ping vim && \
 RUN apt-get update && \
 RUN apt-add-repository -y ppa:ansible/ansible
-RUN apt-get update
+RUN apt-get update && \
 RUN apt-get -y install ansible
  
+RUN mkdir /root/ansible-playbook/
+
 WORKDIR /ansible
