@@ -1,15 +1,14 @@
-FROM ubuntu:16.04
+FROM ubuntu
  
-RUN apt-get update && \
-RUN apt-get install -y python openssh-client iputils-ping vim && \
-RUN apt-get update && \
-RUN apt-add-repository -y ppa:ansible/ansible
-RUN apt-get update && \
-RUN apt-get -y install ansible
-RUN mkdir /root/ansible-playbook/
+RUN \
+  apt-get update && \
+  apt-get install -y python && \
+  apt-get update && \
+  apt-add-repository -y ppa:ansible/ansible && \
+  apt-get update && \
+  apt-get install -y ansible && \
 
+RUN mkdir /ansible
 WORKDIR /ansible
 
 CMD [ "ansible", "--version" ]
-
-
