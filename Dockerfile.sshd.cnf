@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
  
-RUN apt-get update && apt-get install python vim openssh-server -y
+RUN apt-get update && apt-get install python vim curl openssh-server -y
 
 RUN mkdir /var/run/sshd 
 RUN echo 'root:ryan123' | chpasswd
