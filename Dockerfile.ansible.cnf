@@ -1,14 +1,10 @@
 FROM ubuntu
-
 USER root
- 
-RUN apt-get update && \
-RUN apt-get install -y python && \
-RUN apt-add-repository -y ppa:ansible/ansible && \
-RUN apt-get update && \
+RUN apt-get update 
+RUN apt-get install -y python 
+RUN apt-add-repository -y ppa:ansible/ansible
+RUN apt-get update 
 RUN apt-get install -y ansible
-
 RUN mkdir /ansible
 WORKDIR /ansible
-
 CMD [ "ansible", "--version" ]
