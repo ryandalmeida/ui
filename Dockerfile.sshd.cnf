@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-RUN apt-get update && apt-get install python vim curl openssh-server -y
+RUN apt-get update && apt-get install python openssh-server -y
 RUN mkdir /var/run/sshd 
 RUN echo 'root:ryan123' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
